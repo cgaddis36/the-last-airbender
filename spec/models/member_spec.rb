@@ -20,5 +20,9 @@ RSpec.describe Member, type: :model do
       expect(member.affiliation).to eq('Air Nation')
       expect(member.enemies).to eq('Gandolf')
     end
+    it '.find_citizerns' do
+        members = Member.find_citizens('water_tribe')
+        expect(members.count).to eq(20)
+    end
   end
 end
