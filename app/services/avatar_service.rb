@@ -1,11 +1,11 @@
 class AvatarService
   def find_members(nation)
     url = "/api/v1/characters"
-    nation = nation.split("_")
-    nation1 = nation[0].capitalize
-    name = nation[1].capitalize
-    nation = nation1 + " " + name
-require "pry"; binding.pry
+    nation1 = nation.split("_")
+    nation2 = nation1[0].capitalize
+    name = nation1[1].capitalize
+    nation = nation2 + " " + name
+
     get_json(url, nation)
   end
 
