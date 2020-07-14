@@ -1,6 +1,8 @@
 class SearchController < ApplicationController
   def index
-    require "pry"; binding.pry
+    nation = params[:nation]
+    @members = Member.find_members(nation)
+
   end
 
 
