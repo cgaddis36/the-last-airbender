@@ -1,11 +1,20 @@
 class Member
   def initialize(attributes)
-    # @argument = argument
+    @name = attributes[:name]
+    @enemies = attributes[:enemies]
+    @allies = attributes[:allies]
+    @photo = attributes[:photoUrl]
+    @affiliation = attributes[:affiliation]
   end
 
 
-  def self.find_members(nation)
+  def self.find_citizens(nation)
     service = AvatarService.new
-    service.find_members(nation)
+
+    members = service.find_members(nation)
+
+    members = members.map do |member|
+      Member.new(member)
+    end
   end
 end
