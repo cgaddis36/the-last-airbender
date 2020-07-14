@@ -1,0 +1,21 @@
+<% @members.each do |member| %>
+  <section id="member">
+    <section id="name">
+      <%= member.name %>
+    </section>
+    <section id="allies">
+      <%= member.allies %>
+    </section>
+    <section id="enemies">
+      <%= member.enemies %>
+    </section>
+    <section id="affiliation">
+      <%= member.affiliation %>
+    </section>
+    <% if member.photo %>
+      <section id="photo">
+        <%= image_tag(member.photo) %>
+      </section
+    <% end %>
+  </section>
+<% end %>
